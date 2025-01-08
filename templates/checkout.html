@@ -1,0 +1,264 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Cart Summary
+  </title>
+  <style>
+    .links a{
+        color: black;
+        text-decoration: none;
+    }
+</style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../static/CSS/checkout.css">
+ </head>
+ <body>
+  <div class="header">
+    <header>
+      <div class="header_left" style="margin: 5px 10px;">
+          <div class="logo" style="display: flex;">
+            <img src="{{ url_for('static', filename='images/bucket_706520.png') }}" alt="shopcart" height="40" width="35" style="margin: 10px;">
+              <h2 style="margin: 20px 0px;">
+                  Shop<span style="font-weight:normal">cart</span>
+              </h2>
+          </div>
+          <div class="location">
+              <i class="fas fa-map-marker-alt">
+              </i>
+              <span>
+                  Delhi, 110110
+              </span>
+          </div>
+      </div>
+    <div class="section_two" style="display: flex;flex-grow: 1; justify-content: flex-end;">
+      <div class="search-bar" style="margin-inline: 10px;">
+          <input placeholder="Search" type="text" />
+          <i class="fas fa-search">
+          </i>
+      </div>
+      <div class="user-info" style="margin-inline: 20px; font-size: 1.2rem;">
+          <i class="fas fa-user-circle">
+          </i>
+          <span>
+              {{username}}
+          </span>
+      </div>
+  </div>
+  </header>
+  <div class="nav">
+      <a href="#">Fresh</a>
+      <a href="#">Today's offers</a>
+      <a href="#">Mobiles</a>
+      <a href="#">Gift Cards</a>
+      <a href="#">Clothing</a>
+      <a href="#">Health</a>
+      <a href="#">Pet corner</a>
+      <a href="#">Books</a>
+      <a href="#">Beauty</a>
+      <a href="#">Kitchen</a>
+      <a href="#">Bed Room</a>
+      <a href="#">Sport</a>
+      <a href="#">Bags</a>
+  </div>
+  </div>
+  <div class="main">
+  <div class="preview-section" style="width: 480px; height: 675px;">
+    <div class="slide-in-window" id="slide-in">
+      <div class="slide-in-content">
+          <div class="section-top">
+              <div class="images">
+                <img src="{{item_image4}}" alt="" height="80" style="outline: 1px solid;" id="image-s1">
+                <img src="{{item_image5}}" alt="" height="80" style="outline: 1px solid;" id="image-s2">
+              </div>
+                <div class="item-details">
+                  <h2 id="itemName">{{item_name}}</h2>
+                  <a href="https://ptron.in/">Visit the store</a>
+                  <div class="rating" style="display: flex; align-items: center; margin-top: 10px;">
+                    <div class="stars" style="display: flex; margin-right: 10px;">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div class="stars-count" style="padding: 3px 6px; background-color: orange; width: fit-content; border-radius: 3px;">
+                      4.3 <i class="fa fa-star" aria-hidden="true" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="image-section">
+                <div class="images" style="display: flex; flex-direction: column;">
+                  <img src="{{item_image2}}" alt="" height="80" id="image-s3">
+                  <img src="{{item_image3}}" alt="" height="80" id="image-s4">
+                </div>
+                <div class="image-main zoom-container" style="margin-right: 80px">
+                  <img src="{{item_image}}" alt="" height="200" id="itemImage" >
+                </div>
+            </div>
+            <div class="section-bottom" style="display: flex; justify-content: space-between;">
+                <div class="color-and-quantity">
+                  Color : <b>Black</b>
+                  <ul style="list-style-type: none; display: flex;">
+                    <li style="background-color: black;"></li>
+                    <li style="background-color: orange;"></li>
+                    <li style="background-color: blueviolet;"></li>
+                    <li style="background-color: red;"></li>
+                  </ul>
+                  <div class="quantity">
+                    <span style="margin: 5px;">+</span>1 <span style="margin: 5px;">-</span>
+                  </div>
+                </div>
+            </div>
+            <div class="share-section" style="margin-top: 10px;">
+              <div class="links">
+                <a href="">Compare</a>
+                <a href="">Ask a question</a>
+                <a href="">Share</a>
+              </div>
+              <div class="delivery-details">
+                  <b>Estimated delivery: </b>July 30 - Aug 06 <br>
+                  <b>Free shipping & returns:  </b>On all orders above $75
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+  <div class="line" style="height: 600px; width: 1px; background-color: rgb(190, 183, 183);"></div>
+  <div class="right-column" style="min-width: 470px;max-width: 470px; max-height: 540px; margin-right: 50px; align-self: flex-start;margin-top: 20px;">
+   <div class="cart-summary">
+    <div class="cart-header">
+     <div class="product">
+      Product
+     </div>
+     <div class="quantity">
+      Quantity
+     </div>
+     <div class="price">
+      Price
+     </div>
+     <div class="subtotal1">
+      Subtotal
+     </div>
+    </div>
+    <hr>
+    <div class="cart-item" style="background-color: rgb(194, 191, 191); padding-block:10px;border-radius: 5px;">
+     <div class="product" style="display: flex; justify-content: center; align-items: center;">
+      <img alt="Product image of Oneplus Bullets Z2 Bluetooth Wireless in Ear Earphones" height="50" src="{{item_image}}" width="50"/>
+      <div class="details" style="height: 50px;">
+        <span style="margin-bottom: 3px;"><b>Tray table</b></span>
+        <br>
+        <span style="margin-bottom: 3px;">Color: black</span>
+        <br>
+        <span class="remove">X Remove</span>
+      </div>
+     </div>
+     <div class="quantity" style="background-color: white; margin-right: 10px;">
+      <button class="decrement" style="background-color: white;">
+       -
+      </button>
+      <input class="quantity-input" type="text" value="1"/>
+      <button class="increment" style="background-color: white;">
+       +
+      </button>
+     </div>
+     <div class="price">
+      ₹ {{item_price}}
+     </div>
+     <div class="subtotal-main">
+      ₹00.00
+     </div>
+    </div>
+    <div class="shipping-options" style="outline: 1px solid grey;padding: 10px 20px; border-radius: 10px;">
+      <h2>
+        Cart summary
+       </h2>
+     <label>
+      <input checked="" name="shipping" type="radio" value="0"/>
+      Free shipping ₹0.00
+     </label>
+     <label>
+      <input name="shipping" type="radio" value="15"/>
+      Express shipping +₹15.00
+     </label>
+     <label>
+      <input name="shipping" type="radio" value="21"/>
+      Pick Up ₹21.00
+     </label>
+     <div class="total">
+      <span>
+       Subtotal
+      </span>
+      <span class="price subtotal-sub">
+        ₹00.00
+      </span>
+     </div>
+     <div class="total">
+      <span>
+       Total
+      </span>
+      <span class="price total-price">
+        ₹19.00
+      </span>
+     </div>
+     <button class="checkout" style="background-color: orange;" onclick="orderPlaced()">
+      Checkout
+     </button>
+    </div>
+    </div>
+    <div class="coupon" style="width: 95%;margin-left: 15px;">
+      <input class="coupon-input" placeholder="Coupon Code" type="text"/>
+      <button class="apply-coupon" style="background-color: orange;">
+       Apply
+      </button>
+   </div>
+  </div>
+</div>
+  <footer style="display: flex;justify-content: space-between; align-items: center;">
+    <h2 style="margin-left: 30px; ">
+        Shop<span style="font-weight:normal">cart</span>
+    </h2>
+    <div class="container_links" style="display: flex;">
+        <a href="#">About us</a>
+        <a href="#">Contact</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="language" style="margin-right: 30px;">
+        <span>
+            English
+        </span>
+        <img alt="Indian flag" height="20" src="{{ url_for('static', filename='images/indian flag.jpg.webp') }}" width="20" />
+    </div>
+</footer>
+  <script src="../static/JS/index.js">
+        
+  </script>
+  <script defer>document.addEventListener("DOMContentLoaded", function () {
+    const zoomContainer = document.querySelector(".zoom-container");
+    const zoomImage = zoomContainer.querySelector("img");
+
+    zoomContainer.addEventListener("mousemove", function (e) {
+      const rect = zoomContainer.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const xPercent = (x / rect.width) * 100;
+      const yPercent = (y / rect.height) * 100;
+
+      zoomImage.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+      zoomImage.style.transform = "scale(2)";
+    });
+
+    zoomContainer.addEventListener("mouseleave", function () {
+      zoomImage.style.transformOrigin = "center center";
+      zoomImage.style.transform = "scale(1)";
+    });
+  });
+  function orderPlaced(){
+    alert('order placed!')
+  }
+  </script>
+ </body>
+</html>
