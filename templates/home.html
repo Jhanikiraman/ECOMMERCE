@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>
+        ShopCart
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <link rel="stylesheet" href="../static/CSS/style.css">
+    <style>
+        .links a{
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header_left" style="margin: 5px 10px;">
+            <div class="logo" style="display: flex;">
+                <img src="../static/images/bucket_706520.png" alt="shopcart" height="40" width="35" style="margin: 10px;">
+                <h2 style="margin: 20px 0px;">
+                    Shop<span style="font-weight:normal">cart</span>
+                </h2>
+            </div>
+            <div class="location">
+                <i class="fas fa-map-marker-alt">
+                </i>
+                <span>
+                    Delhi, 110110
+                </span>
+            </div>
+        </div>
+      <div class="section_two" style="display: flex;flex-grow: 1; justify-content: flex-end;">
+        <div class="search-bar" style="margin-inline: 10px;">
+            <input placeholder="Search" type="text" />
+            <i class="fas fa-search">
+            </i>
+        </div>
+        <div class="user-info" style="margin-inline: 20px; font-size: 1.2rem;">
+            <i class="fas fa-user-circle">
+            </i>
+            <span>
+                {{username}}
+            </span>
+        </div>
+    </div>
+    </header>
+    <div class="nav">
+        <a href="#">Fresh</a>
+        <a href="#">Today's offers</a>
+        <a href="#">Mobiles</a>
+        <a href="#">Gift Cards</a>
+        <a href="#">Clothing</a>
+        <a href="#">Health</a>
+        <a href="#">Pet corner</a>
+        <a href="#">Books</a>
+        <a href="#">Beauty</a>
+        <a href="#">Kitchen</a>
+        <a href="#">Bed Room</a>
+        <a href="#">Sport</a>
+        <a href="#">Bags</a>
+    </div>
+        <div class="deals" style="display: flex;">
+            <div class="section_coolthings" style="display:flex; flex-direction: column;max-height: 400px;">
+                <h2 class="main-header" style="margin-left: 20px; font-size: 1.7rem; text-align: center;">We picked <span style="color: orange;">some cool</span> things for you!*</h2>
+                <div class="deal-item" style="margin: 0 auto;">
+                    <img alt="A smart speaker on a table with the text 'Alexa, switch on the lights." height="200"
+                        src="../static/images/amazon.jpg" width="300" style="min-width: 300px;"/>
+                </div>
+            </div>
+            <div class="hotdeals_main slider-container">
+                    <h2 class="sub-header" style="margin-left: 30px;padding-bottom: 10px;">
+                        hot deals for you
+                    </h2>
+                    <div class="hotdeals slider" style="display: flex;">
+                        <div class="deal-item card" data-image="../static/images/inalsa.jpg" data-name="Inalsa Air Fryer Fry-Light-1400W" name="inalsa" data-price="4,627">
+                            <img alt="Inalsa Air Fryer Fry-Light-1400W" height="200" 
+                            src="../static/images/inalsa.jpg"
+                            width="200">
+                            <p>
+                            Inalsa Air Fryer Fry-Light-1400W
+                            </p>
+                            <p class="price">
+                            ₹4,627.00
+                            </p>
+                            <p class="discount">
+                            -40% off
+                            </p>
+                        </div>
+                    <div class="deal-item card" data-image="../static/images/headphone.webp" data-name="Oneplus Bullets Bluetooth Wireless Neck Band" name="hp" data-price="1,192">
+                        <img alt="Oneplus Bullets Z2 Bluetooth Wireless" height="200" width="200" src="../static/images/headphone.webp" width="300" />
+                        <p>
+                            Oneplus Bullets Bluetooth Wireless Neck Band
+                        </p>
+                        <p class="price">
+                            ₹1,192.00
+                        </p>
+                        <p class="discount">
+                            -26% off
+                        </p>
+                    </div>
+                    <div class="deal-item card" data-image="../static/images/fast track.webp" data-name="New Fastrack Reflex Play| AMOLED Display"  name="watch" data-price="5,689">
+                        <img alt="New Fastrack Reflex Play| AMOLED Display" height="200" width="200" src="../static/images/fast track.webp"
+                            width="300"/>
+                        <p>
+                            New Fastrack Reflex Play| AMOLED Display
+                        </p>
+                        <p class="price">
+                            ₹5,689.00
+                        </p>
+                        <p class="discount">
+                            -23% off
+                        </p>
+                    </div>
+                    <div class="deal-item card" data-image="../static/images/apple14.jpg" data-name="Apple iPhone 13 (128GB) - Starlight"  name="iphone" data-price="43,999">
+                        <img alt="Apple iPhone 13 (128GB) - Starlight" height="200" width="180" src="../static/images/apple14.jpg"
+                            width="300" name="iphone"/>
+                        <p>
+                            Apple iPhone 13 (128GB) - Starlight
+                        </p>
+                        <p class="price">
+                            ₹43,999.00
+                        </p>
+                        <p class="discount">
+                            -20% off
+                        </p>
+                    </div>
+                    <div class="deal-item card" data-image="../static/images/galaxytab.jpg" data-name="  Samsung Galaxy Tab S9 FE (10.9 inch) Display, RAM 6 GB, IP68 Tablet, Gray" name="tab" data-price="34,999">
+                        <img alt="Samsung Galaxy Tab S9" src="../static/images/galaxytab.jpg"
+                            width="200" height="150"/>
+                        <p>
+                            Samsung Galaxy Tab S9 FE (10.9 inch) Display, RAM 6 GB, IP68 Tablet, Gray
+                        </p>
+                        <p class="price">
+                            ₹34,999.00
+                        </p>
+                        <p class="discount">
+                            -33% off
+                        </p>
+                    </div>
+                    <div class="deal-item card" data-image="../static/images/kodakmini.jpg" data-name="KODAK Mini Shot 3 Retro Instant Camera (3x3 inches) + 8 Sheets, Yellow" name="camera" data-price="12,899">
+                        <img alt="New Fastrack Reflex Play| AMOLED Display" src="../static/images/kodakmini.jpg"
+                            width="200" height="200"/>
+                        <p>
+                            KODAK Mini Shot 3 Retro Instant Camera (3x3 inches) + 8 Sheets, Yellow
+                        </p>
+                        <p class="price">
+                            ₹12,899.00
+                        </p>
+                        <p class="discount">
+                            -10% off
+                        </p>
+                    </div>
+                </div>    
+                <div class="dots">
+                    <span class="dot" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+        <div class="today-deals" style="border-bottom: 2px dashed rgb(207, 178, 125); font-size: 1.3rem; padding-bottom: 10px;">
+            Today's hot deals
+        </div>
+        <div class="deals-section" style="padding-inline: 20px; flex-wrap: wrap;">
+            <div class="item">
+                <img alt="ZEBRONICS Zeb-Reaper 2.4GHz Wireless Gaming Mouse" height="150"
+                    src="../static/images/Zeb-Reaper-pic2.webp" width="150" />
+                <h3>
+                    ZEBRONICS Zeb-Reaper 2.4GHz Wireless Gaming Mouse
+                </h3>
+                <div class="price">
+                    ₹1,599.00
+                </div>
+                <div class="discount">
+                    -40% off
+                </div>
+                <button class="add-to-cart-btn" onclick="showPopup()">
+                    Add to cart
+                </button>
+            </div>
+            <div class="item">
+                <img alt="Zebronics Zeb-Transformer-k USB Gaming Keyboard RGB LED lighting" height="150"
+                    src="../static/images/keyboard.webp" width="150" />
+                <h3>
+                    Zebronics Zeb-Transformer-k USB Gaming Keyboard RGB LED lighting
+                </h3>
+                <div class="price">
+                    ₹999.00
+                </div>
+                <div class="discount">
+                    -36% off
+                </div>
+                <button class="add-to-cart-btn" onclick="showPopup()">
+                    Add to cart
+                </button>
+            </div>
+            <div class="item">
+                <img alt="TP-Link Powered USB Hub with 7 Data Smart Charging Hub" height="150" src="../static/images/TP LINK.jpg"
+                    width="150" />
+                <h3>
+                    TP-Link Powered USB Hub with 7 Data Smart Charging Hub
+                </h3>
+                <div class="price">
+                    ₹1,999.00
+                </div>
+                <div class="discount">
+                    -36% off
+                </div>
+                <button class="add-to-cart-btn" onclick="showPopup()">
+                    Add to cart
+                </button>
+            </div>
+            <div class="item">
+                <img alt="Scarters Mouse Pad, Deskmat Extended for Work from Home/Office/Gaming" height="150"
+                    src="../static/images/MOUSE PAD.jpg" width="150" />
+                <h3>
+                    Scarters Mouse Pad, Deskmat Extended for Work from Home/Office/Gaming
+                </h3>
+                <div class="price">
+                    ₹1,599.00
+                </div>
+                <div class="discount">
+                    -30% off
+                </div>
+                <button class="add-to-cart-btn" onclick="showPopup()">
+                    Add to cart
+                </button>
+            </div>
+            <div class="item">
+                <img alt="HyperX Streamer Starter Pack (HENDU001), Black" height="150" src="../static/images/HYPER MART.jpg"
+                    width="150" />
+                <h3>
+                    HyperX Streamer Starter Pack (HENDU001), Black
+                </h3>
+                <div class="price">
+                    ₹1,159.00
+                </div>
+                <div class="discount">
+                    -26% off
+                </div>
+                <button class="add-to-cart-btn" onclick="showPopup()">
+                    Add to cart
+                </button>
+            </div>
+        </div>
+        <div class="header" style="margin-left: 30px;">
+            <h2>
+                Review your purchase
+            </h2>
+        </div>
+        <div class="review-section" style="padding: 20px ; border-top: 2px dashed rgb(218, 169, 79); ">
+            <div class="item" style="margin: 10px;">
+                <div class="image">
+                    <img alt="2021 Apple iPad Pro with Apple M1 chip (12.9-inch/32.77 cm, Wi-Fi, 128GB)"
+                    src="../static/images/apple2.jpg" width="200" height="200" />
+                </div>
+                <div class="review">
+                    <h3 style="max-width: 400px;">
+                        2021 Apple iPad Pro with Apple M1 chip (12.9-inch/32.77 cm, Wi-Fi, 128GB)
+                    </h3>
+                    <div class="price">
+                        ₹99,900.00
+                    </div>
+                    <div class="rating">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>
+                            <b>4.4 rating</b>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="item" style="margin: 10px;">
+                <div class="image">
+                    <img alt="iPhone 15 Pro Max (256GB)-Natural Titanium" height="150" src="../static/images/apple.jpg" width="150" />
+                </div>
+                <div class="review">
+                <h3>
+                    iPhone 15 Pro Max (256GB)-Natural Titanium
+                </h3>
+                <div class="price">
+                    ₹1,39,900.00
+                    <div>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>
+                                4.6 rating
+                            </span>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            </div>
+        </div>
+    <footer style="display: flex;justify-content: space-between; align-items: center;">
+        <h2 style="margin-left: 30px; ">
+            Shop<span style="font-weight:normal">cart</span>
+        </h2>
+        <div class="container_links" style="display: flex;">
+            <a href="#">About us</a>
+            <a href="#">Contact</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="language" style="margin-right: 30px;">
+            <span>
+                English
+            </span>
+            <img alt="Indian flag" height="20" src="../static/images/indian flag.jpg.webp" width="20" />
+        </div>
+    </footer>
+    <div class="popup" id="popup" style='display:flex'>
+        <img src="https://cdn-icons-png.flaticon.com/128/5610/5610944.png" alt="" height='20'>
+          <span style='margin-left:10px'>Item added to cart!</span>
+    </div>
+    <div class="slide-in-window" id="slide-in">
+        <div class="slide-in-header">
+          <button id="close-btn">✕</button>
+        </div>
+        <form class="slide-in-content" method="post" action="/checkout">
+            <div class="section-top">
+                <div class="images">
+                  <img src="../static/images/hp/hp3.png" alt="" height="80" style="outline: 1px solid;" id="image-s1">
+                  <img src="../static/images/hp/hp4.png" alt="" height="80" style="outline: 1px solid;" id="image-s2">
+                </div>
+                  <div class="item-details">
+                    <h2 id="itemName">pTron Tangentbeat in-Ear Bluetooth Wireless Headphones with Mic, Dual Pairing, Fast Charging, Magnetic Buds, Voice Assist & IPX4 Wireless Neckband (Dark Blue)</h2>
+                    <a href="https://ptron.in/">Visit the pTron store</a>
+                    <div class="rating" style="display: flex; align-items: center; margin-top: 10px;">
+                      <div class="stars" style="display: flex; margin-right: 10px;">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                      <div class="stars-count" style="padding: 3px 6px; background-color: orange; width: fit-content; border-radius: 3px;">
+                        4.3 <i class="fa fa-star" aria-hidden="true" style="color: black;"></i>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="image-section">
+                  <div class="images" style="display: flex; flex-direction: column;">
+                    <img src="../static/images/hp/hp1.png" alt="" height="80" id="image-s3">
+                    <img src="../static/images/hp/hp2.png" alt="" height="80" id="image-s4">
+                  </div>
+                  <div class="image-main" style="margin-right: 80px;">
+                    <img src="../static/images/headphone.webp" alt="" height="200" id="itemImage">
+                  </div>
+              </div>
+              <div class="section-bottom" style="display: flex; justify-content: space-between;">
+                  <div class="color-and-quantity">
+                    Color : <b>Black</b>
+                    <ul style="list-style-type: none; display: flex;">
+                      <li style="background-color: black;"></li>
+                      <li style="background-color: orange;"></li>
+                      <li style="background-color: blueviolet;"></li>
+                      <li style="background-color: red;"></li>
+                    </ul>
+                    <div class="quantity">
+                      <span style="margin: 5px;">+</span>1 <span style="margin: 5px;">-</span>
+                    </div>
+                  </div>
+                  <div class="add-to-cart">
+                    <input type="submit" value="Add to cart" onclick="prepareContent()">
+                  </div>
+              </div>
+              <div class="share-section" style="margin-top: 10px;">
+                <div class="links">
+                  <a href="">Compare</a>
+                  <a href="">Ask a question</a>
+                  <a href="">Share</a>
+                </div>
+                <input type="hidden" id="itemNameInput" name="itemName">
+                <input type="hidden" id="itemImageInput" name="itemImage">
+                <input type="hidden" id="itemImageInput2" name="image1">
+                <input type="hidden" id="itemImageInput3" name="image2">
+                <input type="hidden" id="itemImageInput4" name="image3">
+                <input type="hidden" id="itemImageInput5" name="image4">
+                <input type="hidden" id="itemPrice" name="itemPrice">
+                <div class="delivery-details">
+                    <b>Estimated delivery: </b>July 30 - Aug 06 <br>
+                    <b>Free shipping & returns:  </b>On all orders above $75
+                </div>
+              </div>
+        </div>
+    </form>    
+    <script src="../static/JS/script.js" defer></script>
+   </body>
+</html>

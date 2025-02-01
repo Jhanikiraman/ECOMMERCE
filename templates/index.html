@@ -1,0 +1,136 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Shopcart Login
+  </title>
+  <style>
+   body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 900px;
+            width: 100%;
+        }
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding-inline: 40px;
+        }
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 0 0 10px;
+        }
+        .login-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .login-section img {
+            width: 45px;
+            height: 45px;
+        }
+        .login-section h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        .login-section form {
+            width: 100%;
+        }
+        .login-section input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-section button {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff9900;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-section p {
+            font-size: 14px;
+            color: #666;
+        }
+        .login-section a {
+            color: #ff9900;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .image-section {
+                display: none;
+            }
+            .login-section {
+                border-radius: 10px;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="image-section">
+    <img alt="men sitting" height="450" src="../static/images/photo.jpg.png" width="450"/>
+   </div>
+   <div class="login-section">
+    <div class="logo" style="display: flex; margin-bottom: 30px; align-items: center;">
+        <img alt="Shopcart logo" height="50" src="../static/images/bucket_706520.png" width="50"/>
+    <h1 style="margin: 20px;">
+     Shop<span style='font-weight:normal'>cart</span>
+    </h1>
+    </div>
+    <h3 style="text-align: center;margin-top:0; font-size: 1.5rem;">Login</h3>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li style="color: red;list-style: none;">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+    <form action="{{ url_for('login') }}" method="POST">
+     <input placeholder="E-mail" type="email" name = 'email'required/>
+     <input placeholder="Password" type="password" name="password" required/>
+     <button type="submit">
+      Shop now
+     </button>
+    </form>
+    <p>
+     Don't have an account?
+     <a href="{{ url_for('signup') }}">Register</a>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
